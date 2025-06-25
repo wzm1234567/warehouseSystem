@@ -1,0 +1,37 @@
+:root,:root[theme-mode="light"]{
+    --bgc-color:#ffffff;
+    --bgc-color-light:#e4e6e9;
+    --bgc-color-left: #e4e6e9;
+    --bgc-color-center: #bbd2eb;
+
+    --bgc-color-toolbar:#f4f4f5;
+
+
+    --color-text: #07070a;
+    --color-high-text: #ff5777;
+    --color-tint: #ff8198;
+    --color-background: #fff;
+    --font-size: 14px;
+    --line-height: 1.5;
+}
+
+
+/* 暗黑模式下应用 */
+:root[theme-mode="dark"]{
+    --bgc-color:#14161a;
+    --bgc-color-light:#07070a;
+    --bgc-color-left: #07070a;
+    --bgc-color-center: #061427;
+
+
+    --bgc-color-toolbar:#2e3033;
+
+
+
+    --color-text: #fff;
+    --color-high-text: #ff8198;
+    --color-tint: #ff8198;
+    --color-background: #000;
+    --font-size: 14px;
+    --line-height: 1.5;
+}

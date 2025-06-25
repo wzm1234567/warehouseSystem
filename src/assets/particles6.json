@@ -1,0 +1,33 @@
+{
+    "particles": {
+      "number": {
+        "value": 50
+      },
+      "color": {
+        "value": "#00ff00"
+      },
+      "shape": {
+        "type": "circle"
+      },
+      "opacity": {
+        "value": 0.6
+      },
+      "size": {
+        "value": 5
+      },
+      "move": {
+        "enable": true,
+        "speed": 2,
+        "direction": "bottom"
+      }
+    },
+    "interactivity": {
+      "events": {
+        "onhover": {
+          "enable": true,
+          "mode": "grab"
+        }
+      }
+    },
+    "retina_detect": true
+  }
