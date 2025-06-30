@@ -206,8 +206,7 @@ export default {
     },
   },
   created() {
-    this.menulist = this.$store.getters.getmenu;
-
+    this.menulist = this.$store.getters.getmenu;   
     this.user =
       JSON.parse(localStorage.getItem("user")).nickname ||
       JSON.parse(localStorage.getItem("user")).username;
