@@ -4,7 +4,7 @@ import { MessagePlugin } from "tdesign-vue";
 
 const instance = axios.create({
   // baseURL: "www.junmei.com:3000",
-  baseURL: "http://127.0.0.1:3000",
+  baseURL: process.env.VUE_APP_SYS_API,
   timeout: 5000,
   headers: { "Content-Type": "application/json" },
 });
