@@ -1,6 +1,12 @@
 const { defineConfig } = require("@vue/cli-service");
-const path = require('path');
+// 这个插件的作用是打包时生成 gzip 压缩文件，让网页加载更快
+const CompressionWebpackPlugin = require("compression-webpack-plugin");
+const path = require("path");
 module.exports = defineConfig({
+  // 禁用生产环境 source map 
+  productionSourceMap: false,
+  // 解构node_models中的文件 使用babel转换成es5
+  transpileDependencies: ["element-ui"],
   // transpileDependencies: true
   devServer: {
     proxy: {
@@ -17,7 +23,18 @@ module.exports = defineConfig({
       },
     },
     headers: {
-      'Access-Control-Allow-Origin': '*',
+      "Access-Control-Allow-Origin": "*",
+    },
+  },
+  chainWebpack: (config) => {
+    if (process.env.NODE_ENV !== "development") {
+      // 对超过10kb的文件gzip压缩
+      config.plugin("compressionPlugin").use(
+        new CompressionWebpackPlugin({
+          test: /\.(js|css|html)$/,
+          threshold: 10240,
+        })
+      );
     }
   },
 });

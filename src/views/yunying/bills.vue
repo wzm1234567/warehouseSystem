@@ -107,9 +107,17 @@
           <t-input v-model="formData.dakuanqianshu" placeholder="请输入打款钱数" />
         </t-form-item>
         <t-form-item label="上传发票订单" name="fapiaodingdan">
-          <el-upload v-model="formData.fapiaodingdan" action="http://127.0.0.1:3000/file/uploadImage"
-            class="avatar-uploader" :headers="headers" drag :limit="1" :before-upload="beforeUpload"
-            :on-success="handleSuccess" :show-file-list="false">
+          <el-upload 
+            v-model="formData.fapiaodingdan" 
+            class="avatar-uploader" 
+            :action="actionUrl"
+            :headers="headers" 
+            drag 
+            :limit="1" 
+            :before-upload="beforeUpload"
+            :on-success="handleSuccess" 
+            :show-file-list="false"
+            >
             <img style="width: 100%; height: 100%; z-index: 9999" v-if="imgUrl !== ''" :src="imgUrl" alt="" />
             <i v-else class="el-icon-plus avatar-uploader-icon"></i>
             <div class="el-upload__tip" slot="tip">
@@ -145,6 +153,7 @@ import { MessagePlugin } from "tdesign-vue";
 export default {
   data() {
     return {
+      actionUrl: `${process.env.VUE_APP_SYS_API}/file/uploadImage`,
       data: [],
       size: "small",
       tableLayout: true,
@@ -295,7 +304,6 @@ export default {
           console.log(res);
           if (res.data.code === 0) {
             this.$message.success("提交成功");
-            
             this.formData.fapiaodingdan = "";
             this.imgUrl = "";
             this.visibleAdd = false;
@@ -327,11 +335,11 @@ export default {
     //上传图片功能
     handleSuccess(res, file) {
       this.formData.fapiaodingdan = URL.createObjectURL(file.raw);
-      console.log(this.formData.fapiaodingdan);
-      console.log(res);
+      console.log(res,'上传图片的回调');
       if (res.code == 0) {
         this.formData.fapiaodingdan = res.data;
-        this.imgUrl = `http://127.0.0.1:3000${res.data}`;
+        this.imgUrl = res.data;
+        console.log(this.imgUrl,'this.imgUrl');
         MessagePlugin("success", "上传图片成功");
       } else {
         MessagePlugin.error("上传图片失败");
@@ -342,7 +350,7 @@ export default {
       console.log(row.fapiaodingdan);
 
       if (row.fapiaodingdan === "") return;
-      this.ViewImages = [`http://127.0.0.1:3000${row.fapiaodingdan}`];
+      this.ViewImages = [`${process.env.VUE_APP_SYS_API}${row.fapiaodingdan}`];
       console.log(this.ViewImages);
 
       setTimeout(() => {
