@@ -131,6 +131,7 @@ export default {
   },
   data() {
     return {
+      zongprice: 0,
       addFlag: 0,
       flag: 4,
       formData: {

@@ -4,25 +4,18 @@
         <el-table style="width: 100%" v-loading="loading" :data="tableList"
             :header-cell-style="{ background: '#EFEFEF', textAlign: 'center' }" :border="false" :height="height">
 
-
             <el-table-column width="55" type="selection" align="center" v-if="showCheckBox"></el-table-column>
-
             <el-table-column label="序号" width="55" align="center" v-if="showNumber">
-
                 <template slot-scope="scope">
                     {{ scope.$index + 1 }}
                 </template>
-
             </el-table-column>
             <el-table-column label="" min-width="35" align="center">
-
                 <template slot-scope="scope">
                     <!-- 模板图片插槽 -->
                     <slot name="templateImg" :row="scope.row" v-if="scope.row.survey_model === 2"></slot>
                 </template>
-
             </el-table-column>
-
 
             <el-table-column v-for="(item, index) in headerList" 
             :key="index" 
@@ -31,7 +24,6 @@
             :min-width="item.minWidth" 
             :align="item.props === 'surveyName' ? '' : 'center'">
             </el-table-column>
-
 
 
             <el-table-column label="操作" v-if="showHandle" min-width="300" align="center">

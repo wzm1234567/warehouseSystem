@@ -228,6 +228,7 @@ export default {
         // 退出登录
         localStorage.removeItem("token");
         this.$message.success("退出成功");
+        this.$store.commit("CLEAR_LIST");
         setTimeout(() => {
           this.$router.push("/");
         }, 500);

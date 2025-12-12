@@ -10,8 +10,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   // plugins: [createPersistedState()],
   state: {
-    menu:[],
-    hasRouterFlag:false,
+    menu: [],
+    hasRouterFlag: false,
     user:null
   },
   getters: {
@@ -34,7 +34,11 @@ export default new Vuex.Store({
     },
     setuser(state,data){
       state.user = data
-    }
+    },
+    CLEAR_LIST(state) {
+      state.menu = []; // 直接赋空数组即可
+      state.hasRouterFlag = false;
+    },
   },
   actions: {
     

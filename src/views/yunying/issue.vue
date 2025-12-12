@@ -121,8 +121,7 @@
     <issue-yunsong :visibleyunsong.sync="visibleyunsong" @getlist="getlist"></issue-yunsong>
     <t-dialog header="选择出库时间" :visible.sync="visibleModal" mode="modal" draggable :onConfirm="handleTimeOut">
       <div slot="body">
-        <t-date-picker v-model="timeOut" placeholder="请选择出库时间" clearable allow-input style="width: 100%;"
-          @change="handleChange" />
+        <t-date-picker v-model="timeOut" placeholder="请选择出库时间" clearable allow-input style="width: 100%;"/>
       </div>
     </t-dialog>
   </div>

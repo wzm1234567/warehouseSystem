@@ -1,7 +1,7 @@
 <template>
     <div class="form-login">
         <h1 style="display: flex;align-items: end;">欢迎回来<img style="width: 70px;height: 70px;margin-left: 20px;"
-                src="https://i.postimg.cc/nrvnC97T/91a5c864a7636ea2a1c02128bbcd69d0016677af9e841-GEx-KMQ-fw1200.gif"
+                src="http://117.72.187.234:3001/upload/file-176551762719491a5c864a7636ea2a1c02128bbcd69d0016677af9e841-GEx-KMQ-fw1200.gif"
                 alt=""></h1>
         <p style="font-size: 12px;margin: 10px 0 35px 0;color: #83848c;">请输入您的账号信息开始管理后台项目</p>
         <t-space style="width: 100%">
@@ -95,7 +95,7 @@ export default {
                         trigger: 'blur',
                     },
                     {
-                        max: 10,
+                        max: 100,
                         message: '姓名字符长度超出',
                         type: 'warning',
                         trigger: 'blur',
@@ -142,18 +142,18 @@ export default {
             console.log('formData', this.formData);
         },
         onSubmit({ validateResult, firstError }) {
-            //
             if (validateResult === true) {
-
-                console.log('formData', this.formData);
-
                 http.post('/login/login', this.formData).then(res => {
                     console.log(res)
-                    if (res.data.code == 1) {
+                    console.log(res.data.code);
+                    
+                    if (res.data.code == 0) {
                         localStorage.setItem('token', 'Bearer ' + res.data.data.token)
                         localStorage.setItem('user', JSON.stringify(res.data.data.user))
                         this.$message.success('登录成功');
                         this.$router.push('/layout')
+                    } else {
+                        this.$message.error(res.data.msg);
                     }
                 })
             } else {

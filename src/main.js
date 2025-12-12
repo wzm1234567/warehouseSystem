@@ -18,9 +18,11 @@ const originalPush = Router.prototype.push
 Router.prototype.push = function push(location) {
   return originalPush.call(this, location).catch(err => err)
 }
-
+import http from "@/utils/http"
+Vue.prototype.$http = http;
 import { i18n } from "./i18n/index";
-
+import MyTable from '@/components/myTable.vue'
+Vue.component('MyTable', MyTable)
 // 将自动注册所有组件为全局组件
 import dataV from '@jiaminghi/data-view'
 

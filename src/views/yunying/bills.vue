@@ -47,7 +47,7 @@
               justify-content: space-around;
               box-sizing: border-box;
             ">
-            <t-button size="small" @click="handleEdit(row)">编辑</t-button>
+            <!-- <t-button size="small" @click="handleEdit(row)">编辑</t-button> -->
 
             <t-popconfirm placement="left" theme="danger" destroyOnClose showArrow :visible="false" content="确认删除吗">
               <t-button theme="danger" variant="base" size="small" @click="handleDelete(row)">删除</t-button>
@@ -350,7 +350,7 @@ export default {
       console.log(row.fapiaodingdan);
 
       if (row.fapiaodingdan === "") return;
-      this.ViewImages = [`${process.env.VUE_APP_SYS_API}${row.fapiaodingdan}`];
+      this.ViewImages = [`${row.fapiaodingdan}`];
       console.log(this.ViewImages);
 
       setTimeout(() => {

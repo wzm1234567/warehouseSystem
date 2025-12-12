@@ -3,15 +3,15 @@
         <div class="login-left">
             <div class="login-title">
                 <img style="width: 60px;height: 60px;"
-                    src="https://i.postimg.cc/MZn308n0/bab66ead545efef87ff21fe4c07e020870c086c21c910-Sv-QDk-A.png"
+                    src="http://117.72.187.234:3001/upload/file-1765517627201bab66ead545efef87ff21fe4c07e020870c086c21c910-Sv-QDk-A.png"
                     alt="">
                 <span
-                    style="color: var(--color-text);font-size: 18px;font-weight: 600;letter-spacing: 0.5px;">子默饲料原料仓储管理系统</span>
+                    style="color: var(--color-text);font-size: 18px;font-weight: 600;letter-spacing: 0.5px;">仓储管理系统</span>
             </div>
 
             <div class="login-logo">
                 <img style="width: 80%;height: 80%;"
-                    src="https://i.postimg.cc/MphxbYDt/36762d98f099d7ad0f019e20e1e73a78de56b0b3455dbd-5g-Oo-Wu-fw1200.gif"
+                    src="http://117.72.187.234:3001/upload/file-176551762719236762d98f099d7ad0f019e20e1e73a78de56b0b3455dbd-5g-Oo-Wu-fw1200.gif"
                     alt="">
             </div>
 

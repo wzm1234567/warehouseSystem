@@ -26,8 +26,7 @@
                     <!-- <t-select style="flex: 3;" v-model="formData.guige" :options="regionOptions3"
                             placeholder="请选择产品规格" clearable/> -->
                     <div style="display: flex; width: 100%;">
-                        <t-cascader v-model="value" placeholder="请选择产品规格" :options="regionOptions3" clearable filterable
-                            @change="onChange3" />
+                        <t-cascader v-model="value" placeholder="请选择产品规格" :options="regionOptions3" clearable filterable />
                         <t-select style="flex: 3;" v-model="formData.guige_flag" :options="options1"
                             placeholder="默认选择千克" disabled />
                     </div>

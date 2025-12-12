@@ -109,6 +109,7 @@ export default {
         return {
             delFlag: false,
             addvisible: false,
+            SearchName:'',
             data: [],
             unitsValue: 2,
             size: 'small',
